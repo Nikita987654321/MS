@@ -1,0 +1,55 @@
+﻿@inherits LayoutComponentBase
+@using Microsoft.Extensions.Configuration
+@using downr
+@inject DownrOptions options
+
+<div class="container">
+    <main role="main" class="pb-3">
+        @Body
+    </main>
+</div>
+
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <h2 class="col text-center title">@options.FooterHeadingText</h2>
+        </div>
+        <hr/>
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static post">
+                        <h4 class="mb-0">ML.NET Workshop Learning Materials</h4>
+                        <p class="card-text mb-auto">
+                            <ul>
+                                <li><a href="https://github.com/luisquintanilla/mlnet-workshop/blob/master/docs/what-is-machine-learning.md" target="_blank">What is Machine Learning?</a></li>
+                                <li><a href="https://github.com/luisquintanilla/mlnet-workshop/blob/master/docs/what-is-ml-net.md" target="_blank">What is ML.NET?</a></li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static post">
+                        <h4 class="mb-0">ML.NET Resources</h4>
+                        <p class="card-text mb-auto">
+                            <ul>
+                                <li><a href="https://docs.microsoft.com/dotnet/machine-learning" target="_blank">ML.NET Docs</a></li>
+                                <li><a href="https://github.com/dotnet/machinelearning" target="_blank">ML.NET GitHub repo</a></li>
+                                <li><a href="https://dotnet.microsoft.com/dotnet/machinelearning-samples" target="_blank">ML.NET Samples</a></li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if(options.ShowCopyright)
+        {
+        <hr/>
+        <div class="row justify-content-md-center">
+            <h2 class="col text-center title">copyright &copy; @options.Author </h2>
+        </div>
+        }
+    </div>
+</footer>
